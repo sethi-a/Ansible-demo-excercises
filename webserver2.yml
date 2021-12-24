@@ -10,7 +10,7 @@
     - name: Copy index.html
       copy:
         src: index.html
-        dest: /usr/share/nginx/html/index.html
+        dest: /usr/share/httpd/html/index.html
 
     - name: Restart nginx
       service:
