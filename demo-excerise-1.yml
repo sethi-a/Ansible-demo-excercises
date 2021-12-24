@@ -2,7 +2,5 @@
 - hosts: all
   become: yes
   tasks:
-    - command: 'cat /etc/redhat-release'
-      register: cat1
-    - debug:
-       var: cat1
+    - ping:
+      
