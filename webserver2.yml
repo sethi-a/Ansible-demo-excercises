@@ -11,13 +11,13 @@
       file:
         path: /usr/share/httpd/html
         state: directory
-        
+
     - name: Copy index.html
       copy:
         src: index.html
         dest: /usr/share/httpd/html/index.html
 
-    - name: Restart nginx
+    - name: Restart httpd
       service:
-        name: nginx
+        name: httpd
         state: restarted
