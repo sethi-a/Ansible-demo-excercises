@@ -6,7 +6,12 @@
       yum: 
         name: httpd
         state: latest
-    
+
+    - name: Create directory
+      file:
+        path: /usr/share/httpd/html
+        state: directory
+        
     - name: Copy index.html
       copy:
         src: index.html
