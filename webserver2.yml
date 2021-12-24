@@ -4,20 +4,15 @@
   tasks:
     - name: Install Nginx
       yum: 
-        name: httpd
+        name: nginx
         state: latest
-
-    - name: Create directory
-      file:
-        path: /usr/share/httpd/html
-        state: directory
 
     - name: Copy index.html
       copy:
         src: index.html
-        dest: /usr/share/httpd/html/index.html
+        dest: /usr/share/nginx/html/index.html
 
     - name: Restart httpd
       service:
-        name: httpd
+        name: nginx
         state: restarted
