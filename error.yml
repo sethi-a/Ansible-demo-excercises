@@ -1,0 +1,12 @@
+- name: Run myprog
+  command: /opt/myprog
+  register: result
+  ignore_errors: true
+
+- debug: var=result
+
+- debug: 
+    msg: "Stop running the playbook if myprog failed"
+  failed_when: result|failed
+
+# more tasks here
